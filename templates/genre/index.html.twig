@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'genre.indextitle'|trans }}{% endblock %}
+
+{% block body %}
+
+    <div class="offset-6 col px-0 mb-3">
+        <a href="{{ path('genre_create')}}" id="button" class="btn btn-primary float-end active" role="button" aria-pressed="true">{{ 'genre.create.title'|trans }}</a>
+    </div>
+    {% if form %}
+        {{ form_start(form) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 px-0">{{ 'genre.index.search'|trans }}</div>
+            <div class="col-11 px-0">{{ form_widget(form.search) }}</div>
+            <div class="col-1 text-end">
+                <!-- {{ form_widget(form.choice) }} -->
+                {{ form_widget(form.save, {'label':button, 'attr': {'class': 'btn btn-primary'} }) }}
+                <!--  {{ form_widget(form.fuzzy, {'label':'zoek'}) }} -->
+            </div>
+        </div>
+        {{ form_end(form) }}
+    {% endif  %}
+    <div class="navigation">
+        {{ knp_pagination_render(genres) }}
+    </div>
+
+    <table class="table border table-striped offset-sm-2 offset-md-0 col-sm-8 col-md-6 text-center">
+        <thead>
+        <tr>
+            <th scope="col">{{ knp_pagination_sortable(genres,'movie.actions'|trans ,'name.raw') }}<i class="fa-solid fa-sort"></i></th>
+            {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+                <th scope="col">{{ 'movie.actions'|trans }}</th>
+            {% endif %}
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for genre in genres %}
+            <tr>
+                <th >{{ genre.name }}</th>
+                {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+                    <td><a href="{{ path('genre_edit', {id: genre.id }) }}" title="{{ 'genre.edit.title'|trans }}" data-toggle="tooltip"><i class="fas fa-edit text-success"></i></a> | <a title="{{ 'genre.delete.title'|trans }}" data-toggle="tooltip" href="{{ path('genre_delete_temp', {id: genre.id }) }}"><i class="fa-solid fa-trash-can text-danger"></i></a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(genres) }}
+    </div>
+{% endblock %}

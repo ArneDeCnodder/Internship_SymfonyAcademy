@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'movie.deletetitle'|trans }}{% endblock %}
+
+{% block body %}
+
+    <div class="offset-sm-2 offset-md-0 col-sm-8 col-md-6" >
+        <h1 class="pb-4">{{ 'movie.delete.title'|trans }} "{{  movie.title }}" ?</h1>
+        <p>{{ 'movie.delete.message'|trans }}</p>
+        <div class="mb-5">
+            <a href="{{ path('movie_delete',{id: movie.id}) }}" class=" mb-5 btn btn-primary">{{ 'movie.delete.confirm'|trans }}</a>
+        </div>
+        <div class="mt-5">
+            <a href="{{ path('movie_index') }}" class="btn btn-primary mb-3">{{ 'movie.back'|trans }}</a>
+        </div>
+
+    </div>
+
+{% endblock %}

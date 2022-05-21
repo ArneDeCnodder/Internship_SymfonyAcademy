@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class=" mt-5 row justify-content-md-center align-items-center">
+            <div class="offset-sm-2 offset-md-0 col-sm-8 col-md-6" >
+                {{ form_start(form) }}
+                <div class="mb-4">
+                    <h1>
+                        {{ title }}
+                    </h1>
+                </div>
+                <div class="error">
+                    {{ form_errors(form) }}
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3" id="title">
+                        {{ 'movie.title'|trans }}
+                        {{ form_widget(form.title) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3" id="director">
+                        {{ 'movie.director'|trans }}
+                        {{ form_widget(form.director) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3" id="year">
+                        {{ 'movie.year'|trans }}
+                        {{ form_widget(form.year) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3" id="genre">
+                        {{ form_row(form.genre) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3" id="description">
+                        {{ 'movie.description'|trans }}
+                        {{ form_widget(form.description) }}
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col mb-3" id="imdb">
+                        {{ form_row(form.imdb) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="save">
+                        {{ form_widget(form.save, {'label':button}) }}
+                    </div>
+                </div>
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

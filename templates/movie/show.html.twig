@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'movie.showtitle'|trans }}{% endblock %}
+
+{% block body %}
+
+    <div class="offset-sm-2 offset-md-0 col-sm-8 col-md-6" >
+        <h1 class="pb-4">{{ movie.title}}</h1>
+        <p><strong>{{  'movie.director'|trans }}</strong> {{ movie.director }}</p>
+        {% if movie.genre%}
+            <p><strong>Genre</strong> {{ movie.genre.name }}</p>
+        {% else %}
+            <p><strong>Genre</strong></p><p>{{ 'genre.show.description'|trans }}</p>
+        {% endif %}
+        <p class="mb-5"><strong>{{  'movie.year'|trans }}</strong> {{ movie.year }}</p>
+
+        {% if movie.description%}
+            <p><strong>{{ 'movie.description'|trans }}</strong></p>
+            <p>{{ movie.description }}</p>
+        {% else %}
+            <p><strong>{{ 'movie.description'|trans }}</strong></p>
+            <p>{{ 'movie.show.description'|trans }}</p>
+        {% endif %}
+
+        {% if movie.imdb%}
+            <a href="{{ movie.imdb }}">IMDB</a>
+        {% else %}
+            <p>{{ 'movie.show.imdb'|trans }}</p>
+        {% endif %}
+
+        <div class="mt-5">
+            <a href="{{ path('movie_index') }}" class="btn btn-primary mb-3">{{ 'movie.back'|trans }}</a>
+        </div>
+
+    </div>
+    <div class="offset-sm-2 offset-md-0 col-sm-8 col-md-6 text-center" >
+    {% if movie.poster is null%}
+        <img width="60%" class="img-thumbnail" src="{{ asset('assets/no_image.png') }}" alt="{{ movie.title}}">
+    {% else %}
+        <img width="60%" class="img-thumbnail" src="{{ movie.poster }}" alt="{{ movie.title}}">
+    {% endif %}
+    </div>
+
+{% endblock %}
+

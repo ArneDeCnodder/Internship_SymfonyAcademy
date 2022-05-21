@@ -1,0 +1,42 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/setup.md
+fos_elastica:
+    clients:
+        default: { url: '%env(ELASTICSEARCH_URL)%' }
+    indexes:
+        genre:
+            persistence:
+                # the driver can be orm, mongodb or phpcr
+                driver: orm
+                model: App\Entity\Genre
+                provider: ~
+                finder: ~
+            properties:
+                name:
+                    type: text
+                    fields:
+                        raw:
+                            type: keyword
+        movie:
+            persistence:
+                # the driver can be orm, mongodb or phpcr
+                driver: orm
+                model: App\Entity\Movie
+                provider: ~
+                finder: ~
+            properties:
+                id: ~
+                title:
+                    type: text
+                    fields:
+                        raw:
+                            type: keyword
+                year:
+                    type: text
+                    fields:
+                        raw:
+                            type: keyword
+                director:
+                    type: text
+                    fields:
+                        raw:
+                            type: keyword

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}YAMDB | Log in{% endblock %}
+
+{% block body %}
+
+    <div class="card col-4">
+        <article class="card-body">
+            <h4 class="card-title text-center mb-4 mt-1">Please log in</h4>
+            <hr>
+            {% if error %}
+                <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+            {% endif %}
+            <form action="{{ path('login') }}" method="post">
+                <div class="form-group my-4">
+                    <label for="username">User email:</label>
+                    <div class="input-group ">
+                        <input id="username" name="_username" value="{{ last_username }}"class="form-control" placeholder="Email" type="email">
+                    </div>
+                </div>
+                <div class="form-group  my-4">
+                    <label for="password">Password:</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="******" type="password" id="password" name="_password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                    <a href="{{path('app_register')}}" type="button" class="mx-auto btn btn-primary">Register</a>
+                </div>
+            </form>
+        </article>
+    </div>
+{% endblock %}
+

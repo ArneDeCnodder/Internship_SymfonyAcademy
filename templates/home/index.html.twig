@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'hello.world.2'|trans }}{% endblock %}
+
+{% block body %}
+    <div style="position: absolute;top:0;right:0" class="navbar-brand mb-0 h1">
+        <a href="{{ path('hello_world', {'_locale': 'nl'}) }}">Dutch</a> |
+        <a href="{{ path('hello_world', {'_locale': 'en'}) }}">English</a>
+    </div>
+    <div class="container">
+
+
+        <div class=" mt-5 row justify-content-md-center align-items-center">
+            <div class="offset-sm-2 offset-md-0 col-sm-8 col-md-6 border text-center" >
+                <h1>{{ 'hello.world.2'|trans }}</h1>
+                <p>{{ 'hello.world.intro'|trans }}</p>
+                <p>{{ 'hello.world.lorem'|trans }}</p>
+                <button type="button" class="btn btn-primary mb-3">{{ 'lets.go'|trans }}</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

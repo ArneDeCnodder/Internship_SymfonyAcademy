@@ -1,0 +1,68 @@
+welcome: Welcome
+lets:
+  go: Let's go
+hello:
+  world:
+    intro: If you see this, it means that you are awesome!
+    lorem: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi error quas quisquam. Ab atque commodi culpa deserunt eum eveniet fugit illo labore maiores mollitia neque nostrum odio, perferendis possimus quis sit tempora unde. Cumque harum itaque perspiciatis sequi soluta. Aspernatur assumenda atque cum, cumque dicta distinctio dolores error expedita harum hic in inventore, labore minus praesentium quasi quia recusandae repellat totam vel voluptas! Aut consequuntur doloremque enim, itaque porro recusandae veniam. Alias consectetur est harum, mollitia possimus qui repellendus rerum sequi veniam veritatis? Adipisci blanditiis dolor ducimus fugiat fugit illo inventore itaque molestias non optio, recusandae, sapiente sequi vero, vitae.
+    2: Hello world 2.0
+genre:
+  index:
+    search: Search for a specific genre
+  show:
+    description: No genre found for this movie!
+  create:
+    danger: Please fill out all the fields to submit a new genre!
+    success: The genre was succesfully added to the list
+    title: Create new genre
+    button: Save new genre and go back
+  edit:
+    danger: Oops something went wrong, check if you still have some form errors before submitting!
+    success: The genre was succesfully changed!
+    title: Edit
+    button: Save genre and go back
+  delete:
+    title: Delete
+    message: Are you sure you want to delete this genre?
+    confirm: Yes, I'm sure
+    back: Go back
+  edittitle: YAMDB | Edit Genre
+  createtitle: YAMDB | Create Genre
+  deletetitle: YAMDB | Delete Genre
+  indextitle: YAMDB | Genre
+movie:
+  index:
+    button: Search
+    search: Look for a specific title, director or year
+    choice: Choose what you want to sort on
+    order: Choose the order
+  show:
+    description: No description found for this movie!
+    imdb: No Imdb link found for this movie!
+  actions: Actions
+  create:
+    danger: Please fill out all the fields to submit a new movie!
+    success: The movie was succesfully added to the list
+    title: Create new movie
+    button: Save new movie and go back
+  edit:
+    danger: Oops something went wrong, check if you still have some form errors before submitting!
+    success: The movie was succesfully changed!
+    title: Edit
+    button: Save movie and go back
+  delete:
+    title: Delete
+    message: Are you sure you want to delete this movie?
+    confirm: Yes, I'm sure
+  edittitle: YAMDB | Edit Movie
+  createtitle: YAMDB | Create Movie
+  deletetitle: YAMDB | Delete Movie
+  indextitle: YAMDB | Movie
+  showtitle: YAMDB | Movie Details
+  title: Title
+  director: Director
+  description: Description
+  year: Year
+  desc: Descending
+  asc: Ascending
+  back: Back to overview

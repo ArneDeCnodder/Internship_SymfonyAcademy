@@ -1,0 +1,156 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Bruxx/BruNL admin update</title>
+    <style type="text/css">
+        a:hover { color: #09F !important; text-decoration: underline !important; }
+        a:hover#vw { background-color: #CCC !important; text-decoration: none !important; color:#000 !important; }
+        a:hover#ff { background-color: #6CF !important; text-decoration: none !important; color:#FFF !important; }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+<body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #FFFFFF;" bgcolor="#FFFFFF" leftmargin="0">
+<!--100% body table-->
+<table role="none" aria-hidden="true" cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#FFFFFF">
+    <tr>
+        <td>
+            <!--email container-->
+            <table role="none" cellspacing="0" border="0" align="center" cellpadding="0" width="624">
+                <tr>
+                    <td>
+                        <!--header-->
+                        <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                            <tr>
+                                <td valign="top"><img src="{{ absolute_url(asset('bundles/admin/images/email/spacer-top.jpg')) }}" alt="email spacer" height="12" width="624" />
+                                    <!--header content-->
+                                    <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                                        <tr>
+                                            <td>
+                                                <h1 style="color: #333; margin: 0px; font-weight: normal; font-size: 40px; font-family: Helvetica, Arial, sans-serif;">Bruxx/BruNL admin update</h1>
+                                                <p style="color: #333; margin-top: 10px; font-weight: normal; font-family: Helvetica, Arial, sans-serif;">
+                                                    sent at {{ 'now'|date('d-m-Y H:i') }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--/header content-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!--/header-->
+                        <!--line break-->
+                        <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                            <tr>
+                                <td height="30" valign="middle" width="624"><img src="{{ absolute_url(asset('bundles/admin/images/email/line-break.jpg')) }}" alt="email line break" height="13" width="624" /></td>
+                            </tr>
+                        </table>
+                        <!--/line break-->
+                        <!--email content-->
+                        <table role="none" cellspacing="0" border="0" id="email-content" cellpadding="0" width="624">
+                            <tr>
+                                <td>
+
+                                    {% block emailContent %}
+                                        <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                                            <tr>
+                                                <td>
+                                                    {% if inactiveCleanup is defined %}
+                                                        <h2 style="font-size: 22px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">Inactive Cleanup Report</h2>
+                                                    {% endif %}
+                                                    {% if userRemoval is defined %}
+                                                        <h2 style="font-size: 22px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">User Removal Report</h2>
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                                                        <tr>
+                                                            <td colspan="4" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;"><h3>People set inactive</h3></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="padding: 10px 0; text-align: left;">&nbsp;</th>
+                                                            <th style="padding: 10px 0; text-align: left;">Before Cleanup</th>
+                                                            <th style="padding: 10px 0; text-align: left;">After Cleanup</th>
+                                                            <th style="padding: 10px 0; text-align: left;">Difference</th>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>Total Inactive</td>
+                                                            <td>hello</td>
+                                                            <td>jow</td>
+                                                            <td>hi</td>
+                                                        </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;"><h3>State changes in Campaign Monitor</h3></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="padding: 10px 0; text-align: left;">&nbsp;</th>
+                                                                <th style="padding: 10px 0; text-align: left;">Before Cleanup</th>
+                                                                <th style="padding: 10px 0; text-align: left;">After Cleanup</th>
+                                                                <th style="padding: 10px 0; text-align: left;">Difference</th>
+                                                            </tr>
+
+                                                                <tr>
+                                                                    <td>hello</td>
+                                                                    <td>jow</td>
+                                                                    <td>goodmoringin</td>
+                                                                    <td>welcome</td>
+                                                                </tr>
+                                                    </table>
+
+                                                    <table cellspacing="0" border="0" cellpadding="0" width="624">
+                                                        <tr>
+                                                            <td colspan="3" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;"><h3>Removed data</h3></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="padding: 10px 0; text-align: left;">Persons</th>
+                                                            <th style="padding: 10px 0; text-align: left;">Actors</th>
+                                                            <th style="padding: 10px 0; text-align: left;">Events</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>hihi</td>
+                                                            <td>hihi</td>
+                                                            <td>hihi</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    {% endblock %}
+                                    <!--line break-->
+                                    <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                                        <tr>
+                                            <td height="30" valign="middle" width="624"><img src="{{ absolute_url(asset('bundles/admin/images/email/line-break-2.jpg')) }}" alt="email line break" height="13" width="624" /></td>
+                                        </tr>
+                                    </table>
+                                    <!--/line break-->
+                                    <!--footer-->
+                                    <table role="none" cellspacing="0" border="0" cellpadding="0" width="624">
+                                        <tr>
+                                            <td>
+                                                <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">You’re receiving this e-mail because you are enlisted as an administrator of Bruxx/BruNL.
+                                                    <br />
+                                                    <br />
+                                                    Intracto Digital Agency.</p>
+                                                <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{ absolute_url(asset('bundles/admin/images/email/spacer-ten.jpg')) }}" alt="email spacer" height="10" width="624" /></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--/email content-->
+                    </td>
+                </tr>
+            </table>
+            <!--/email container-->
+        </td>
+    </tr>
+</table>
+<!--/100% body table-->
+</body>
+</html>

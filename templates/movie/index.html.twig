@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'movie.indextitle'|trans }}{% endblock %}
+
+{% block body %}
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+        <div class="col-6 px-0 mb-3"><h3>{{ 'welcome'| trans }} {{ app.user.name }}</h3></div>
+        <div class="col-6 px-0 mb-3">
+            <a href="{{ path('movie_create')}}" class="btn btn-primary float-end active" role="button" aria-pressed="true">{{ 'movie.create.title'|trans }}</a>
+        </div>
+    {% else %}
+        <div class="col offset-6 px-0 mb-3">
+            <a href="{{ path('movie_create')}}" class="btn btn-primary float-end active" role="button" aria-pressed="true">{{ 'movie.create.title'|trans }}</a>
+        </div>
+    {% endif %}
+
+    {% if form %}
+        {{ form_start(form) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 px-0">{{ 'movie.index.search'|trans }}</div>
+            <div class="col-1 px-0">
+                {{ form_widget(form.choice) }}
+            </div>
+            <div class="col-10 px-0">{{ form_widget(form.search) }}</div>
+            <div class="col-1 text-end">
+                {{ form_widget(form.save, {'label':button, 'attr': {'class': 'btn btn-primary'} }) }}
+                <!--  {{ form_widget(form.fuzzy, {'label':buttonFuzzy}) }} -->
+            </div>
+        </div>
+        {{ form_end(form) }}
+    {% endif  %}
+
+
+
+    {{ knp_pagination_render(movies) }}
+
+    <table class="table border table-striped offset-sm-2 offset-md-0 col-sm-8 col-md-6 text-center ">
+        <thead>
+        <tr>
+            <th scope="col">{{ knp_pagination_sortable(movies,'movie.title'|trans ,'title.raw') }}<i class="fa-solid fa-sort"></i></th>
+            <th scope="col">{{ knp_pagination_sortable(movies,'movie.director'|trans ,'director.raw') }}<i class="fa-solid fa-sort"></i></th>
+            <th scope="col">{{ knp_pagination_sortable(movies,'movie.year'|trans ,'year.raw') }}<i class="fa-solid fa-sort"></i></th>
+            {% if app.user %}
+                <th scope="col">{{ 'movie.actions'|trans }}</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for movie in movies %}
+            <tr>
+                <th ><a href="{{ path('movie_show', {id: movie.id }) }}">{{ movie.title }}</a></th>
+                <td>{{ movie.director }}</td>
+                <td>{{ movie.year }}</td>
+                {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+                    <td><a href="{{ path('movie_edit', {id: movie.id }) }}" title="{{ 'movie.edit.title'|trans }}" data-toggle="tooltip"><i class="fas fa-edit text-success"></i></a> | <a title="{{ 'movie.delete.title'|trans }}" data-toggle="tooltip" href="{{ path('movie_delete_temp', {id: movie.id }) }}"><i class="fa-solid fa-trash-can text-danger"></i></a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {{ knp_pagination_render(movies) }}
+{% endblock %}

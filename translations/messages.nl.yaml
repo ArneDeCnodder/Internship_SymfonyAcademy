@@ -1,0 +1,68 @@
+welcome: Welkom
+lets:
+  go: Laat ons gaan!
+hello:
+  world:
+    intro: Als je dit ziet, betekent het dat je geweldig bent!
+    lorem: Ik ben een makelaar in koffi, en woon op de Lauriergracht No 37. Het is mijn gewoonte niet, romans te schrijven, of zulke dingen, en het heeft dan ook lang geduurd, voor ik er toe overging een paar riem papier extra te bestellen, en het werk aan te vangen, dat gij, lieve lezer, zoâven in de hand hebt genomen, en dat ge lezen moet als ge makelaar in koffie zijt, of als ge wat anders zijt. Niet alleen dat ik nooit iets schreef wat naar een roman geleek, maar ik houd er zelfs niet van, iets dergelijks te lezen.
+    2: Hallo wereld 2.0
+genre:
+  index:
+    search: Zoek een specifiek genre
+  show:
+    description: Geen genre gevonden voor deze film!
+  create:
+    danger: Vul alle velden in voor je een nieuw genre toevoegt!
+    success: Het genre was succesvol toegevoegd aan de lijst!
+    title: Maak een nieuw genre aan
+    button: Sla het nieuwe genre op en ga terug
+  edit:
+    danger: Oeps er ging iets mis, controleer of je nog errors hebt voordat je het genre opslaat!
+    success: Het genre was succesvol veranderd!
+    title: Bewerk
+    button: Sla genre op en ga terug
+  delete:
+    title: Verwijder
+    message: Ben je zeker dat je dit genre wil verwijderen?
+    confirm: Ja, ik ben zeker!
+    back: Ga terug
+  edittitle: YAMDB | Bewerk Genre
+  createtitle: YAMDB | Maak Genre Aan
+  deletetitle: YAMDB | Verwijder Genre
+  indextitle: YAMDB | Genre
+movie:
+  index:
+    button: Zoek
+    search: Zoek naar een bepaalde titel, regisseur of jaar
+    choice: Kies het onderwerp waarop je wil sorteren
+    order: Kies voor oplopend of aflopend
+  show:
+    description: Geen beschrijving gevonden voor deze film!
+    imdb: Geen Imdb link gevonden voor deze film!
+  actions: Acties
+  create:
+    title: Maak een nieuwe film aan
+    button: Sla de nieuwe film op en keer terug
+    danger: Vul alle velden in voor je een nieuwe film toevoegt!
+    success: De film was succesvol toegevoegd aan de lijst!
+  edit:
+    title: Bewerk
+    button: Sla de film op en keer terug
+    danger: Oeps er ging iets mis, controleer of je nog errors hebt voordat je de film opslaat!
+    success: De film was succesvol veranderd!
+  delete:
+    title: Verwijder
+    message: Ben je zeker dat je deze film wil verwijderen?
+    confirm: Ja, ik ben zeker!
+  edittitle: YAMDB | Bewerk Film
+  createtitle: YAMDB | Maak Film aan
+  deletetitle: YAMDB | Verwijder Film
+  indextitle: YAMDB | Film
+  showtitle: YAMDB | Film Details
+  title: Titel
+  director: Regisseur
+  description: Beschrijving
+  year: Jaar
+  desc: Aflopend
+  asc: Oplopend
+  back: Terug naar overzicht

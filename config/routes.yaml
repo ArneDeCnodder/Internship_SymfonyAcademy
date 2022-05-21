@@ -1,0 +1,5 @@
+logout:
+  path: /{_locale}/logout
+  methods: GET
+  requirements:
+    _locale: en|nl

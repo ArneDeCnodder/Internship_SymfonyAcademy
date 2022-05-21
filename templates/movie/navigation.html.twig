@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="mx-auto order-0 px-2">
+        <a class="navbar-brand mx-auto" href="{{ path('movie_index') }}">YAMDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+                    <a class="navbar-brand mx-auto" href="{{ path('logout') }}">| Logout |</a>
+                {% else %}
+                    <a class="navbar-brand mx-auto" href="{{ path('login') }}">| Login |</a>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('movie_index') }}">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('genre_index') }}">Genres</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto px-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('movie_index', {'_locale': 'nl'}) }}">Nederlands</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('movie_index', {'_locale': 'en'}) }}">English</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
